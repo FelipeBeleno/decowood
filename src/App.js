@@ -3,8 +3,10 @@ import Draggable from 'react-draggable';
 import { Fragment, useCallback, useState } from 'react';
 import downloadjs from 'downloadjs';
 import html2canvas from 'html2canvas';
-import { Button } from '@mui/material';
-
+import { Button, IconButton } from '@mui/material';
+import PhotoCamera from '@mui/icons-material/PhotoCamera';
+import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 
 function App() {
 
@@ -12,6 +14,7 @@ function App() {
 
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [image, setImage] = useState("");
+  const [long, setLong] = useState([220, 220])
   const trackPos = (data) => {
     console.log(position)
     setPosition({ x: data.x, y: data.y });
@@ -37,17 +40,76 @@ function App() {
       <br />
       <div className='conatiner__menu'>
 
-        <Button variant="contained">
-          <input className='inputClass' type='file' accept='image/*' onChange={handleImage} capture="environment" />
-        </Button>
+        <IconButton color="primary" aria-label="upload picture" component="label">
+          <input hidden className='inputClass' type='file' accept='image/*' onChange={handleImage} capture="environment" />
+          <PhotoCamera />
+        </IconButton>
+
         <br />
 
         {
           image !== ""
           &&
-          <Button variant="contained" onClick={() => {
-            hanldeClickImage()
-          }}>Descargar</Button>
+          <>
+            <Button variant="contained" onClick={() => {
+              hanldeClickImage()
+            }}>Descargar</Button>
+
+
+            {/*
+              aqui inicia el ancho
+              */ }
+            <p>Modifique el ancho</p>
+            <div >
+              <div className='modificadores'>
+
+
+                <IconButton color="primary" aria-label="upload picture" component="label" onClick={() => {
+                  let w = long[0] + 10
+                  let h = long[1]
+                  setLong([w, h])
+                }}>
+
+                  <AddCircleOutlineIcon />
+                </IconButton>
+
+                <IconButton color="primary" aria-label="upload picture" component="label" onClick={() => {
+                  let w = long[0] - 10
+                  let h = long[1]
+                  setLong([w, h])
+                }}>
+
+                  <RemoveCircleOutlineIcon />
+                </IconButton>
+              </div>
+            </div>
+
+            {/*
+              aqui inicia el largo
+              */ }
+            <div >
+              <p>Modifique el largo</p>
+              <div className='modificadores'>
+                <IconButton color="primary" aria-label="upload picture" component="label" onClick={() => {
+                  let w = long[0]
+                  let h = long[1] + 10
+                  setLong([w, h])
+                }}>
+
+                  <AddCircleOutlineIcon />
+                </IconButton>
+
+                <IconButton color="primary" aria-label="upload picture" component="label" onClick={() => {
+                  let w = long[0]
+                  let h = long[1] - 10
+                  setLong([w, h])
+                }}>
+                  <RemoveCircleOutlineIcon />
+                </IconButton>
+              </div>
+            </div>
+
+          </>
         }
       </div>
 
@@ -76,7 +138,7 @@ function App() {
                 }}
               >
 
-                <img src='/example3.png' alt='' style={{ width: 220, height: 220 }} />
+                <img src='/example3.png' alt='' style={{ width: long[0], height: long[1] }} />
               </Draggable>
           }
 

@@ -36,7 +36,10 @@
   flex-direction: column ;
   width: 1000px;
 }
-
+.modificadores{
+  display: flex ;
+  justify-content: center;
+}
 
 @media (max-width: 600px) {
 
