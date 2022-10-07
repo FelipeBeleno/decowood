@@ -37,3 +37,19 @@
   width: 1000px;
 }
 
+
+@media (max-width: 600px) {
+
+  .content {
+    width: 1000px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .App {
+    height: 90vh;
+    width: 90%;
+    border: dotted;
+  }
+}
