@@ -70,7 +70,7 @@ function App() {
                   setLong([w, h])
                 }}>
 
-                  <AddCircleOutlineIcon />
+                  <AddCircleOutlineIcon style={{ width: 50, height: 50 }} />
                 </IconButton>
 
                 <IconButton size='large' color="primary" aria-label="upload picture" component="label" onClick={() => {
@@ -79,7 +79,7 @@ function App() {
                   setLong([w, h])
                 }}>
 
-                  <RemoveCircleOutlineIcon />
+                  <RemoveCircleOutlineIcon style={{ width: 50, height: 50 }} />
                 </IconButton>
               </div>
             </div>
@@ -87,8 +87,8 @@ function App() {
             {/*
               aqui inicia el largo
               */ }
+            <p>Modifique el alto</p>
             <div >
-              <p>Modifique el largo</p>
               <div className='modificadores'>
                 <IconButton size='large' color="primary" aria-label="upload picture" component="label" onClick={() => {
                   let w = long[0]
@@ -96,7 +96,7 @@ function App() {
                   setLong([w, h])
                 }}>
 
-                  <AddCircleOutlineIcon />
+                  <AddCircleOutlineIcon style={{ width: 50, height: 50 }} />
                 </IconButton>
 
                 <IconButton size='large' color="primary" aria-label="upload picture" component="label" onClick={() => {
@@ -104,7 +104,7 @@ function App() {
                   let h = long[1] - 10
                   setLong([w, h])
                 }}>
-                  <RemoveCircleOutlineIcon />
+                  <RemoveCircleOutlineIcon style={{ width: 50, height: 50 }} />
                 </IconButton>
               </div>
             </div>
