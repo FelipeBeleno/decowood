@@ -40,8 +40,6 @@ function App() {
       <button onClick={() => {
         hanldeClickImage()
       }}>Descargar</button>
-
-
       {/*
         se activara cuando se cargue la imagen de la camara 
         limitar la posicion a 0 , 0
