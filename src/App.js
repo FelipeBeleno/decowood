@@ -40,7 +40,7 @@ function App() {
       <br />
       <div className='conatiner__menu'>
 
-        <IconButton color="primary" aria-label="upload picture" component="label">
+        <IconButton size='large' color="primary" aria-label="upload picture" component="label">
           <input hidden className='inputClass' type='file' accept='image/*' onChange={handleImage} capture="environment" />
           <PhotoCamera />
         </IconButton>
@@ -64,7 +64,7 @@ function App() {
               <div className='modificadores'>
 
 
-                <IconButton color="primary" aria-label="upload picture" component="label" onClick={() => {
+                <IconButton size='large' color="primary" aria-label="upload picture" component="label" onClick={() => {
                   let w = long[0] + 10
                   let h = long[1]
                   setLong([w, h])
@@ -73,7 +73,7 @@ function App() {
                   <AddCircleOutlineIcon />
                 </IconButton>
 
-                <IconButton color="primary" aria-label="upload picture" component="label" onClick={() => {
+                <IconButton size='large' color="primary" aria-label="upload picture" component="label" onClick={() => {
                   let w = long[0] - 10
                   let h = long[1]
                   setLong([w, h])
@@ -90,7 +90,7 @@ function App() {
             <div >
               <p>Modifique el largo</p>
               <div className='modificadores'>
-                <IconButton color="primary" aria-label="upload picture" component="label" onClick={() => {
+                <IconButton size='large' color="primary" aria-label="upload picture" component="label" onClick={() => {
                   let w = long[0]
                   let h = long[1] + 10
                   setLong([w, h])
@@ -99,7 +99,7 @@ function App() {
                   <AddCircleOutlineIcon />
                 </IconButton>
 
-                <IconButton color="primary" aria-label="upload picture" component="label" onClick={() => {
+                <IconButton size='large' color="primary" aria-label="upload picture" component="label" onClick={() => {
                   let w = long[0]
                   let h = long[1] - 10
                   setLong([w, h])
