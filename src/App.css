@@ -3,6 +3,9 @@
   height: 487px;
   width: 1024px;
   border: dotted;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
@@ -24,6 +27,14 @@
   padding: 1em;
   margin: auto;
   user-select: none;
+}
+
+.conatiner__menu{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column ;
+  width: 1000px;
 }
 
 
